@@ -85,21 +85,45 @@
             </div>
         </nav>
         <!-- end navigation panel -->
-        <section class="parallax1 parallax-fix full-screen no-padding" >
+        <section class="parallax1 parallax-fix full-screen" style="max-height:580px" >
             <img class="parallax-background-img" src="/images/roof_dinner.jpg" alt="" />
             <div class="container full-screen position-relative">
-                <div class="slider-typography">
-                    <div class="slider-text-middle-main">
-                        <div class="slider-text-bottom slider-text-middle5 text-left animated fadeInUp">
-                            <span class="slider-title-big5 white-text">Need a place to stay tonight?</span>
-                            <span class="slider-subtitle5 white-text">Find clean, safe rooms <br> at the last minute <br>owned by people you can trust</span><br>
-                            <div class="separator-line bg-yellow no-margin-lr no-margin-top xs-margin-bottom-ten"></div>
+                <div class = "row"  >
 
-                            <span class="slider-title-big5 white-text">Have a beautiful spare room?</span>
-                            <span class="slider-subtitle5 white-text">Earn Some Extra Cash! </span><br>
-                        </div>
+                    <div class = "col-md-4">
+
+                        <form class= "signup" action= "/api/profile" method = "post">
+                            <p>Sign up for a sneak preview
+                                <br>when we launch this spring! </p>
+                            <hr>
+                            <input  type="text" name="name" placeholder="Name" />  <br />
+
+                            <input type="text" name="city" placeholder="City" /> <br />
+                            <input type="email" name="email" placeholder="Your e-mail" /> <br />
+                            <input type="password" name="password" placeholder="Pick a Password" /><br>
+                            <button class="btn btn-success no-margin-bottom" type="submit">Register </button>
+                        </form>
+
                     </div>
+
+                    <div class = "col-md-8">
+                        <div class="slider-typography">
+                            <div class="slider-text-middle-main">
+                                <div class="slider-text-bottom slider-text-middle5 text-left animated fadeInUp">
+                                    <span class="slider-title-big5 white-text">Need a place to stay tonight?</span>
+                                    <span class="slider-subtitle5 white-text">Clean, safe rooms <br> at the last minute <br>from people you can trust</span><br>
+                                    <div class="separator-line bg-yellow no-margin-lr no-margin-top xs-margin-bottom-ten"></div>
+
+                                    <span class="slider-title-big5 white-text">Have a beautiful spare room?</span>
+                                    <span class="slider-subtitle5 white-text">Earn Some Extra Cash! </span><br>
+                                </div>
+                            </div>
                 </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </section>
         <!-- end parallax -->

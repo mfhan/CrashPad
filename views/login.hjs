@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Log In</h1>
+    <form action= "/account/login" method = "post">
+        <input type="email" name="email" placeholder="Your e-mail" /> <br />
+        <input type="password" name="password" placeholder="Pick a Password" /><br>
+        <button type="submit" value="Submit">Log In</button>  <br>
+  </body>
+</html>

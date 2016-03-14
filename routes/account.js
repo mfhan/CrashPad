@@ -22,7 +22,7 @@ router.post('/:resource', function(req, res, next) {
 
     if (resource == 'login'){
     	var loginCredentials = req.body;
-    	var email = loginCredentials.email.toLowerCase;
+    	var email = loginCredentials.email.toLowerCase();
 
     //we must find the profile with that email:
 	    ProfileController.getRawProfiles({email:email}, function(err, results){

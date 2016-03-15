@@ -52,7 +52,14 @@
             <div class="container">
                 <div class="row">
                     <!-- logo -->
-                    <div class="col-md-2 pull-left"><a class="logo-light" href="index.html"><img alt="" src="images/logo-white.png" class="logo" /></a><a class="logo-dark" href="index.html"><img alt="" src="images/logo-light.png" class="logo" /></a></div>
+                    <div class="col-md-2 pull-left">
+                        <a class="logo-light" href="/">
+                            <img alt="" src="images/logo-white.png" class="logo" />
+                        </a>
+                        <a class="logo-dark" href="/">
+                            <img alt="" src="images/logo-light.png" class="logo" />
+                        </a>
+                    </div>
                     <!-- end logo -->
 
                     <!-- toggle navigation -->
@@ -77,8 +84,9 @@
                                     <!-- sub menu item  -->
                                     <ul id="collapse7" class="dropdown-menu panel-collapse collapse" role="menu">
                                         <li class="dropdown-header">Pads</li>
-                                        <li><a href="home-shop.html">New York</a></li>
-                                        <li><a href="shop-with-sidebar.html">Chiacago</a></li><li><a href="shop-with-sidebar-list.html">Los Angeles</a></li>
+                                        <li><a href="/pads">New York</a></li>
+                                        <li><a href="/pads">Chicago</a></li>
+                                        <li><a href="/pads">Los Angeles</a></li>
                                         <!-- <li><a href="shop-full-width.html">Shop full width</a></li>
                                         <li><a href="shop-single-product.html">Single product</a></li>
                                         <li><a href="shop-cart.html">Cart</a></li>

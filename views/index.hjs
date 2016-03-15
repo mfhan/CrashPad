@@ -70,9 +70,21 @@
 
                                     <!-- WE REMOVED: class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown" -->
                                 </li>
-                                <li class="dropdown panel">
-                                    <a href="#collapse1">Pads <i class="fa fa-angle-down"></i></a>
 
+                                <li class="dropdown panel simple-dropdown">
+                                    <a href="#collapse7" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Pads <i class="fa fa-angle-down"></i></a>
+                                    <!-- sub menu single -->
+                                    <!-- sub menu item  -->
+                                    <ul id="collapse7" class="dropdown-menu panel-collapse collapse" role="menu">
+                                        <li class="dropdown-header">Pads</li>
+                                        <li><a href="home-shop.html">New York</a></li>
+                                        <li><a href="shop-with-sidebar.html">Chiacago</a></li><li><a href="shop-with-sidebar-list.html">Los Angeles</a></li>
+                                        <!-- <li><a href="shop-full-width.html">Shop full width</a></li>
+                                        <li><a href="shop-single-product.html">Single product</a></li>
+                                        <li><a href="shop-cart.html">Cart</a></li>
+                                        <li><a href="shop-checkout.html">Checkout</a></li> -->
+                                    </ul>
+                                </li>
                                 <li class="dropdown panel">
                                     <a href="/register">Join <i class="fa fa-angle-down"></i></a>
                                 </li>

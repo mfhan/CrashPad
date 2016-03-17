@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:page', function(req, res, next) {
-  	res.render(req.params.page, { title: 'Express' });
+  res.render(req.params.page, { title: 'Express' });
 });
 
 module.exports = router;

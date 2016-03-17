@@ -6,6 +6,8 @@ var PadSchema = new mongoose.Schema({
   city: {type:String, trim: true, lowercase:true, default:''},
   state: {type:String, trim: true, lowercase:true, default:''},
   zip: {type:String, trim: true, lowercase:true, default:''},
+  size: {type:Number, trim: true, lowercase:true, default:100},
+  capacity: {type:Number, trim: true, lowercase:true, default:1},
   rate: {type:Number, default: 0},
 });
 
@@ -16,6 +18,8 @@ PadSchema.methods.summary = function() {
   'city':this.city,
   'state':this.state,
   'zip':this.zip,
+  'size':this.size,
+  'capacity':this.capacity,
   'rate':this.rate,
   'id':this._id
   };

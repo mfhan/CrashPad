@@ -1,12 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-        {{>head}}
+       {{>head}}
     </head>
-
     <body>
         <!-- navigation panel -->
         <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-white nav-dark-transparent" role="navigation">
+<!--  previously NAV turned white: <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-white nav-border-bottom" role="navigation"> -->
             <div class="container">
                 <div class="row">
                     <!-- logo -->
@@ -19,6 +19,7 @@
                         </a>
                     </div>
                     <!-- end logo -->
+
                     <!-- toggle navigation -->
                     <div class="navbar-header col-sm-8 col-xs-2 pull-right">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
@@ -37,12 +38,17 @@
 
                                 <li class="dropdown panel simple-dropdown">
                                     <a href="#collapse7" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Pads <i class="fa fa-angle-down"></i></a>
-
+                                    <!-- sub menu single -->
+                                    <!-- sub menu item  -->
                                     <ul id="collapse7" class="dropdown-menu panel-collapse collapse" role="menu">
                                         <li class="dropdown-header">Pads</li>
                                         <li><a href="/pads">New York</a></li>
                                         <li><a href="/pads">Chicago</a></li>
                                         <li><a href="/pads">Los Angeles</a></li>
+                                        <!-- <li><a href="shop-full-width.html">Shop full width</a></li>
+                                        <li><a href="shop-single-product.html">Single product</a></li>
+                                        <li><a href="shop-cart.html">Cart</a></li>
+                                        <li><a href="shop-checkout.html">Checkout</a></li> -->
                                     </ul>
                                 </li>
                                 <li class="dropdown panel">
@@ -56,86 +62,69 @@
                 </div>
             </div>
         </nav>
-        <!-- end navigation panel -->
-        <!-- head section -->
-        <section class="content-top-margin page-title page-title-small border-bottom-light border-top-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
-                        <!-- page title -->
-                        <h1 class="black-text">YOUR ACCOUNT</h1>
-                        <!-- end page title -->
-                    </div>
+        <!--end navigation panel -->
 
-                </div>
-            </div>
-        </section>
+
         <!-- end head section -->
 
+        <!-- content section -->
 
-  <section class="wow fadeIn border-top">
+
+
+        <section class="wow fadeIn border-top">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-sm-10 center-col text-center margin-ten no-margin-top xs-margin-bottom-seven">
-                        <h6 class="no-margin-top margin-ten xs-margin-bottom-seven"><strong class="black-text">Your Account</strong></h6>
+                        <h2 class="no-margin-top margin-ten xs-margin-bottom-seven"><strong class="black-text">Your Account</strong></h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-7 col-sm-12 center-col">
                         <!-- tab -->
-                        <div class="tab-style2">
+                        <div class="tab-style3">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <!-- tab navigation -->
                                     <ul class="nav nav-tabs nav-tabs-light text-left">
-                                        <li class="active"><a href="#tab2_sec1" data-toggle="tab">Account Details</a></li>
-                                        <li><a href="#tabo2_sec2" data-toggle="tab">Your Profile</a></li>
-                                        <li><a href="#tab2_sec3" data-toggle="tab">Your Payment Details </a></li>
-                                    </ul>
+                                        <li class="active"><a href="#tab3_sec1" data-toggle="tab">Account Details</a></li>
+                                        <li><a href="#tab3_sec2" data-toggle="tab">Properties</a></li>
+                                        <li><a href="#tab3_sec3" data-toggle="tab">Your Payment Details</a></li>
+<!--                                         <li><a href="#tab3_sec4" data-toggle="tab">Reviews</a></li>
+                                    </ul> -->
                                     <!-- end tab navigation -->
                                 </div>
                             </div>
+                        </div>
                             <!-- tab content section -->
                             <div class="tab-content">
                                 <!-- tab content -->
-                                <div class="tab-pane med-text fade in active" id="tab2_sec1">
+                                <div class="tab-pane med-text fade in active" id="tab3_sec1">
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
-                                            <p class="no-margin-bottom">
-
-        <!-- content section -->
-          <form class= "signup" action= "/api/profile" method = "post">
-                            <p>Verify or Modify Account Details</p>
-                            <hr>
-                            <input  type="text" name="firstName" placeholder="First Name" />  <br />
-                            <input  type="text" name="lastname" placeholder="Last Name" />  <br />
-                            <input  type="text" name="address" placeholder="Address" />  <br />
-                            <input type="text" name="city" placeholder="City" /> <br />
-                            <input type="email" name="email" placeholder="Your e-mail" /> <br />
-                            <input type="password" name="password" placeholder="Password" /><br>
-                            <input type="password" name="password" placeholder="Choose New Password" /><br>
-                            <input type="password" name="password" placeholder="Verify New Password" /><br>
-                            <button type="submit">Submit </button>
-                        </form>
-        <!-- end content section -->
-
-                                            </p>
+                                              <form class= "signup" action= "/api/profile" method = "post">
+                    <p>Account Details</p>
+                    <hr>
+                    <input  type="text" name="firstName" placeholder="First Name" />  <br />
+                    <input  type="text" name="lastname" placeholder="Last Name" />  <br />
+                    <input  type="text" name="address" placeholder="Address" />  <br />
+                    <input type="text" name="city" placeholder="City" /> <br />
+                    <input type="email" name="email" placeholder="Your e-mail" /> <br />
+                    <input type="password" name="password" placeholder="Password" /><br>
+                    <input type="password" name="password" placeholder="Choose New Password" /><br>
+                    <input type="password" name="password" placeholder="Verify New Password" /><br>
+                    <button type="submit">Submit </button>
+                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+
                                 <!-- end tab content -->
                                 <!-- tab content -->
-                          <div class="tab-content">
-                                <!-- tab content -->
-                                <div class="tab-pane med-text fade in active" id="tab2_sec1">
+                                <div class="tab-pane fade in" id="tab3_sec2">
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <p class="no-margin-bottom">
-                                <div class="tab-pane fade in" id="tab2_sec2">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                             <!-- content section -->
-                                            <form class= "signup" action= "/api/pad" method = "post">
+                                                <form class= "signup" action= "/api/pad" method = "post">
                                                 <p>Your Property Details</p>
                                                 <hr>
                                                 <input  type="text" name="id" placeholder="Property ID" />  <br />
@@ -148,19 +137,16 @@
                                                 <button type="submit">Submit </button>
                                                 </form>
 
+
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- end tab content -->
                                 <!-- tab content -->
-                                <div class="tab-pane fade in" id="tab2_sec3">
+                                <div class="tab-pane fade in" id="tab3_sec3">
                                     <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                             <section>
-            <div class="container clearfix">
 
-                <div class="row margin-five no-margin-top">
-                    <div class="col-md-5 col-sm-12 pull-left sm-margin-bottom-seven">
                         <p class="black-text font-weight-600 text-uppercase text-large">Billing Address</p>
                         <form id="billing-form" method="post" action="javascript:void(0)" name="billing-form">
                             <div class="col-md-6 no-padding-left sm-no-padding">
@@ -207,181 +193,15 @@
                             <div class="col-md-12 no-padding">
                                 <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
                             </div>
-                            <div class="col-md-12 no-padding">
-                                <label>* Account Password:</label>
-                                <input type="password" name="password">
-                            </div>
-                        </form>
-                    </div>
 
-                            <div class="col-md-12 no-padding">
-                                <label>Order Notes:</label>
-                                <textarea name="comment" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="row margin-five sm-margin-bottom-seven">
-                    <div class="col-sm-12 shop-cart-table">
-                        <table class="table shop-cart text-center">
-                            <thead>
-                                <tr>
-                                    <th class="first"></th>
-                                    <th class="text-left text-uppercase font-weight-600 letter-spacing-2 text-small black-text">Product</th>
-                                    <th class="text-left text-uppercase font-weight-600 letter-spacing-2 text-small black-text">Price</th>
-                                    <th class="text-left text-uppercase font-weight-600 letter-spacing-2 text-small black-text">Quantity</th>
-                                    <th class="text-left text-uppercase font-weight-600 letter-spacing-2 text-small black-text">Sub Total</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="product-thumbnail text-left">
-                                        <a href="shop-single-product.html"><img src="http://placehold.it/120x120" alt="" ></a>
-                                    </td>
-                                    <td class="text-left">
-                                        <a href="shop-single-product.html">Chasse Wells Italian Genuine Leather Incroyable Tote</a>
-                                        <span class="text-uppercase display-block text-small margin-two">SKU: 290397</span>
-                                        <a href="shop-single-product.html" class="text-small"><i class="fa fa-edit black-text"></i> Edit</a>
-                                    </td>
-                                    <td class="text-left">
-                                        $450
-                                    </td>
-                                    <td class="product-quantity">
-                                        <div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">
-                                            <select>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal text-left">$450</td>
-                                    <td class="product-remove text-center">
-                                        <a href="javascript:void(0)"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="product-thumbnail text-left">
-                                        <a href="shop-single-product.html"><img src="http://placehold.it/120x120" alt="" ></a>
-                                    </td>
-                                    <td class="text-left">
-                                        <a href="shop-single-product.html">Tundra perforated suede boots</a>
-                                        <span class="text-uppercase display-block text-small margin-two">SKU: 450365</span>
-                                        <a href="shop-single-product.html" class="text-small"><i class="fa fa-edit black-text"></i> Edit</a>
-                                    </td>
-                                    <td class="text-left">
-                                        $350
-                                    </td>
-                                    <td class="product-quantity">
-                                        <div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">
-                                            <select>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal text-left">$350</td>
-                                    <td class="product-remove text-center">
-                                        <a href="javascript:void(0)"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="accordion-one" class="col-md-6 col-sm-12 panel-group accordion-style1 sm-margin-bottom-seven">
-                        <!-- accordion item -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a href="#accordion-one-link1" data-parent="#accordion-one" data-toggle="collapse" class="collapsed"><h4 class="panel-title">Direct Bank Transfer<span class="pull-right"><i class="fa fa-plus"></i></span></h4></a>
-                            </div>
-                            <div class="panel-collapse collapse" id="accordion-one-link1" style="height: 0px;">
-                                <div class="panel-body">
-                                    Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus. Aenean lacinia bibendum nulla sed consectetur.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end accordion item -->
-                        <!-- accordion item -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a href="#accordion-one-link2" data-parent="#accordion-one" data-toggle="collapse" class="collapsed"><h4 class="panel-title">Cheque Payment<span class="pull-right"><i class="fa fa-plus"></i></span></h4></a>
-                            </div>
-                            <div class="panel-collapse collapse" id="accordion-one-link2" style="height: 0px;">
-                                <div class="panel-body">
-                                    Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end accordion item -->
-                        <!-- accordion item -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading active-accordion">
-                                <a href="#accordion-one-link3" data-parent="#accordion-one" data-toggle="collapse" class=""><h4 class="panel-title">Paypal<span class="pull-right"><i class="fa fa-minus"></i></span></h4></a>
-                            </div>
-                            <div class="panel-collapse collapse in" id="accordion-one-link3" style="">
-                                <div class="panel-body">
-                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end accordion item -->
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <table class="table cart-total">
-                            <tbody>
-                                <tr>
-                                    <th class="padding-two text-right no-padding-right text-uppercase font-weight-600 letter-spacing-2 text-small xs-no-padding">Cart Subtotal</th>
-                                    <td class="padding-two text-uppercase text-right no-padding-right font-weight-600 black-text xs-no-padding">$800</td>
-                                </tr>
-                                <tr>
-                                    <th class="padding-two text-right no-padding-right text-uppercase font-weight-600 letter-spacing-2 text-small xs-no-padding">Shipping and Handling</th>
-                                    <td class="padding-two text-uppercase text-right no-padding-right font-weight-600 black-text text-small xs-no-padding">Free</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="padding-one no-padding-right xs-no-padding">
-                                        <hr>
-                                    </td>
-                                </tr>
-                                <tr class="total">
-                                    <th class="padding-two text-uppercase text-right no-padding-right font-weight-600 text-large xs-no-padding">Order Total</th>
-                                    <td class="padding-two text-uppercase text-right no-padding-right font-weight-600 black-text text-large no-letter-spacing xs-no-padding">$800</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="padding-one no-padding-right xs-no-padding">
-                                        <hr class="no-margin-bottom">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <a href="shop-checkout.html" class="highlight-button-black-background btn no-margin pull-right checkout-btn xs-width-100 xs-text-center">Place Order</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-                                        </div>
+
+
                                     </div>
                                 </div>
                                 <!-- end tab content -->
                                 <!-- tab content -->
-                                <div class="tab-pane fade in" id="tab2_sec4">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <p class="no-margin-bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p><br>
-                                            <p class="no-margin-bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text.</p>
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <!-- end tab content -->
                             </div>
                             <!-- end tab content section -->
@@ -393,6 +213,23 @@
         </section>
 
 
+        <!-- footer -->
+        <footer>
+            <div class=" bg-white footer-top">
+                <div class="container">
+                    <div class="row margin-four">
+                        <!-- phone -->
+                        <div class="col-md-4 col-sm-4 text-center"><i class="icon-phone small-icon black-text"></i><h6 class="black-text margin-two no-margin-bottom">123-456-7890</h6></div>
+                        <!-- end phone -->
+                        <!-- address -->
+                        <div class="col-md-4 col-sm-4 text-center"><i class="icon-map-pin small-icon black-text"></i><h6 class="black-text margin-two no-margin-bottom">Victoria, United States</h6></div>
+                        <!-- end address -->
+                        <!-- email -->
+                        <div class="col-md-4 col-sm-4 text-center"><i class="icon-envelope small-icon black-text"></i><h6 class="margin-two no-margin-bottom"><a href="mailto:no-reply@domain.com" class="black-text">no-reply@domain.com</a></h6></div>
+                        <!-- end email -->
+                    </div>
+                </div>
+            </div>
         {{>footer}}
         {{>scripts}}
     </body>

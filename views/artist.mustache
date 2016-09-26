@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- javascript libraries / javascript files set #1 -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+
+    </script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <title>Join Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <div id="header col-sm-8 col-xs-2 pull-right">
+        <!-- <div class="col-md-10 no-padding-right text-right"> -->
+        <ul >
+          <li >
+              <a href="/about">How does this work?</a>
+          </li>
+          <li >
+              <a href="/" >Home </a>
+          </li>
+          <li >
+              <a href="/register-donor">Join as a Donor</a>
+          </li>
+      </ul>
+  </div>
+
+  <div class="colmask">
+    <div class="colmid">
+        <div class=".col-xs-12 .col-md-10  text-center">
+          <form class= "signup" action= "/api/artist" method = "post">
+            <h2>Artist Profile Details</h2>
+            <hr>
+            <input  type="text" name="firstName"  placeholder="First Name" />  <br />
+            <input  type="text" name="lastname" placeholder="Last Name" />  <br />
+            <input  type="text" name="username" placeholder="User Name" />  <br />
+            <input  type="text" name="zipcode" placeholder="Your zipcode" />  <br />
+            <input  type="text" name="glat" size="30" placeholder="Your Google Latitude (make sure to paste all the digits!)" />  <br />
+            <input  type="text" name="glong" size="30" placeholder="Your Google Longitude (make sure to paste the MINUS SIGN!)" />  <br />
+            <input  type="text" name="website" size="45" placeholder="Your website URL" />  <br />
+            <input  type="text" name="videolink" size="45"  placeholder="Your Youtube link" />  <br />
+            <input type="email" name="email" placeholder="Enter e-mail address linked to your Paypal account" /> <br />
+            <input type="password" name="password" placeholder="Password" /><br>
+            <input type="password" name="password" placeholder="Choose New Password" /><br>
+            <input type="password" name="password" placeholder="Verify New Password" /><br>
+            <button size="30" type="submit">Submit and see your location on the map!</button>
+          </form>
+          <br>
+          <div id="map"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- <script>
+{{>scripts}}
+</script> -->
+
+</body>
+</html>
+

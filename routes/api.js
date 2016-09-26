@@ -1,11 +1,17 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var router = express.Router();
-var ProfileController = require('../controllers/ProfileController');
-var PadController = require('../controllers/PadController');
+var DonorController = require('../controllers/DonorController');
+var Donor = require('../models/Donor');
+var ArtistController = require('../controllers/ArtistController');
+var Artist = require('../models/Artist');
+var GigController = require('../controllers/GigController');
+var bcrypt = require('bcrypt');
 
 var controllers = {
-    'profile':ProfileController,
-    'pad':PadController
+	'donor' : DonorController,
+	'artist' : ArtistController,
+	'gig' : GigController
 }
 
 function createErrorObject(msg){
@@ -17,58 +23,143 @@ function createErrorObject(msg){
 }
 
 router.post('/:resource', function(req, res, next) {
-    var resource = req.params.resource;
-    var controller = controllers[resource];
-
-    if (controller == null){
-    	res.json(createErrorObject(resource+ ' is not a valid resource'));
-    	return;
-    }
-
-	controller.post(req.body, function(err, result){
-		if (err){
-			res.json(createErrorObject(err.message));
-			return;
+	var resource = req.params.resource;
+	// var controller = controllers[resource];
+		if (resource == 'donor') {
+			DonorController.post(req.body, function(err, result){// new user registration, inser
+			 req.session.user = result.id;
+	     res.json({
+	    	 confirmation:'success',
+	    	 result: result
+	       });
+	    	return;
+	  	});
 		}
-
-		req.session.user = result.id;
-        if (resource == 'profile'){
-            req.session.user =result.id;
-        }
-
-		res.json({
-			confirmation: 'success',
-			result:result
-		});
-		return;
-	});
-	return;
+		if (resource == 'artist'){
+			ArtistController.post(req.body, function(err, result){// new user registration,
+			 req.session.user = result.id;
+	     res.json({
+	    	 confirmation:'success',
+	    	 result: result
+	       });
+	    	return;
+	  });
+		}
 });
 
-router.get('/:resource', function(req, res, next) {
-    var resource = req.params.resource;
 
-    var controller = controllers[resource];
-    if (controller == null){
+	// controller.post(req.body, function(err, result){
+
+	// 	if (resource == 'donor') // new user registration, insert cookie:
+	// 		req.session.user = result.id;
+	//     res.json({
+	//     	confirmation:'success',
+	//     	result: result
+	//     });
+	//     return;
+
+ //    if (err){
+	// 		res.json(createErrorObject(err.message));
+	// 	  return;
+	// 	}
+	// });
+
+
+
+// router.post('/:resource', function(req, res, next) {
+//     var resource = req.params.resource;
+//     var controller = controllers[resource];
+
+//     if (controller == null){
+//     	res.json(createErrorObject(resource+ ' is not a valid resource'));
+//     	return;
+//     }
+
+// 	controller.post(req.body, function(err, result){
+// 		if (err){
+// 			res.json(createErrorObject(err.message));
+// 			return;
+// 		}
+
+// 		req.session.user = result.id;
+//         if (resource == 'donor'){
+//             req.session.user =result.id;
+//         }
+
+// 		res.json({
+// 			confirmation: 'success',
+// 			result:result
+// 		});
+// 		return;
+// 	});
+// 	return;
+// });
+
+
+router.get('/:artist', function(req, res, next) {
+
+    if (!ArtistController == null){
     	res.json(createErrorObject(resource+ ' is not a valid resource'));
     	return;
     }
 
-	controller.get(req.query, function(err, results){
-		if (err){
-			res.json(createErrorObject(err.message));
+		else {ArtistController.get(req.query, function(err, results){
+				if (err){
+					res.json(createErrorObject(err.message));
+					return;
+				}
+
+			var data = {
+				confirmation:'success',
+				results: results
+				}
+				res.json(data);
+				return;
+				});
 			return;
-		}
+	}
+});
+
+router.get('/:donor', function(req, res, next) {
+
+    if (!DonorController){
+    	res.json(createErrorObject(resource+ ' is not a valid resource'));
+    	return;
+    }
+
+		else {DonorController.controller.get(req.query, function(err, results){
+			if (err){
+				res.json(createErrorObject(err.message));
+				return;
+			}
 
 		var data = {
 			confirmation:'success',
 			results: results
-		}
-		res.json(data);
+			}
+			res.json(data);
+			return;
+			});
 		return;
-	});
-	return;
+	}
 });
+
+
+// 	controller.get(req.query, function(err, results){
+// 		if (err){
+// 			res.json(createErrorObject(err.message));
+// 			return;
+// 		}
+
+// 		var data = {
+// 			confirmation:'success',
+// 			results: results
+// 		}
+// 		res.json(data);
+// 		return;
+// 	});
+// 	return;
+// });
 
 router.get('/:resource/:id', function(req, res, next) {
     var resource = req.params.resource;
@@ -92,24 +183,24 @@ router.get('/:resource/:id', function(req, res, next) {
 		return;
 });
 
-router.put('/:resource/:id', function(req, res, next) {
-    var resource = req.params.resource;
-    var controller = controllers[resource];
-    if (controller == null){
-    	res.json(createErrorObject(resource+ ' is not a valid resource'));
-    	return;
-    }
-	controller.put(req.params.id, req.body, function(err, result){
-		if (err){
-			res.json(createErrorObject(err.message));
-			return;
-		}
-		res.json({
-			confirmation: 'success',
-			result:result
-		});
-		return;
-	});
-});
+// router.put('/:resource/:id', function(req, res, next) {
+//     var resource = req.params.resource;
+//     var controller = controllers[resource];
+//     if (controller == null){
+//     	res.json(createErrorObject(resource+ ' is not a valid resource'));
+//     	return;
+//     }
+// 	controller.put(req.params.id, req.body, function(err, result){
+// 		if (err){
+// 			res.json(createErrorObject(err.message));
+// 			return;
+// 		}
+// 		res.json({
+// 			confirmation: 'success',
+// 			result:result
+// 		});
+// 		return;
+// 	});
+// });
 
 module.exports = router;

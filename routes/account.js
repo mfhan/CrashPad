@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var ProfileController = require('../controllers/ProfileController');
-var PadController = require('../controllers/PadController');
+var DonorController = require('../controllers/DonorController');
+var ArtistController = require('../controllers/ArtistController');
+var GigController = require('../controllers/GigController');
 var bcrypt = require('bcrypt');
 
 var controllers = {
-    'profile':ProfileController,
-    'pad':PadController
+	'donor' : DonorController,
+	'artist' : ArtistController,
+	'gig' : GigController
 }
 
 function createErrorObject(msg){
@@ -24,8 +26,8 @@ router.post('/:resource', function(req, res, next) {
     	var loginCredentials = req.body;
     	var email = loginCredentials.email.toLowerCase();
 
-    //we must find the profile with that email:
-	    ProfileController.getRawProfiles({email:email}, function(err, results){
+    //we must find the donor with that email:
+	    DonorController.getRawDonors({email:email}, function(err, results){
 	    	if (err){
 		      	res.json(createErrorObject(err.message));
 		    	return;
@@ -51,7 +53,7 @@ router.post('/:resource', function(req, res, next) {
 			req.session.user = user._id; //we're installing a cookie
 	    	res.json({
 	    		confirmation: 'success',
-	    		profile: user.summary()
+	    		donor: user.summary()
 	    		});
 	    	return;
 	    });
@@ -73,7 +75,7 @@ router.get('/:resource', function(req, res, next) {
     		return;
     	}
 
-		ProfileController.getById(req.session.user, function(err, result){
+		DonorController.getById(req.session.user, function(err, result){
 			if (err){
 			res.json(createErrorObject(err.message));
     		return;
